@@ -1,0 +1,40 @@
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-half content">
+        <h2 class="title is-3">Starting a group</h2>
+        <p>
+        Starting a group can be very satisfying. It’s quite easy to bring a few people together to do an occasional pick, more work to create a larger group that endures.  There are a few key things that you need to do. Here are our ten key things you need to do to get started:
+        </p>
+
+        <ul>
+          <li>Find 3 or 4 people</li>
+          <li>Discuss what you want to do and how you’ll work together</li>
+          <li>Tools (You can use a telescopic pole with a basket but we recommend a pole with a hook so you can shake the tree!)</li>
+          <li>Sheet or tarpaulin</li>
+          <li>Find a fruit bearing tree!</li>
+          <li>Have a think about what to do with the harvested fruit</li>
+          <li>Transport of fruit – pedal power, bike baskets, walking</li>
+          <li>Strong boxes – Ask for them or borrow them from your local supermarket or shop</li>
+          <li>Leaflet to recruit volunteers – have a look at our resources to see if there’s any useful content</li>
+          <li>Get picking!</li>
+        </ul>
+      </div>
+      <div class="column is-half">
+        <h2 class="title is-3">Groups</h2>
+
+        <div id='map' style='width: 100%; height: 500px;'></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoicG1hY2theSIsImEiOiI4ODM1MjhkNTFjNmM1NzdlY2MwNTcwM2FmZmQ3ODQ2YSJ9.1aIURJi_s5z6pHsQV6iAGg';
+var map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/pmackay/ck6npyhyo0syu1inq6tn8lpft',
+  center: [-2.18, 53.34], // starting position [lng, lat]
+  zoom: 5 // starting zoom
+});
+</script>

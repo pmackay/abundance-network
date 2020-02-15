@@ -6,6 +6,10 @@
     <title>{{ site.name }}</title>
     {% include 'favicons.njk' %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Literata:400,700&display=swap" rel="stylesheet">
+    
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css' rel='stylesheet' />
 
     <link rel="stylesheet" href="/css/main.css">
     <script src="/main.js"></script>
@@ -16,9 +20,7 @@
     <main>
       {% block main %}{% endblock %}
 
-      <div class="content">
-        {{ content | safe }}
-      </div>
+      {{ content | safe }}
     </main>
 
     {% include 'footer.njk' %}

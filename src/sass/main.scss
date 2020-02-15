@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+$title-family: "Literata", serif;
+$family-primary: "Literata", serif;
+
+
+// Bulma imports
+
+@import "../../node_modules/bulma/bulma.sass";
+@import "../../node_modules/bulma-helper-spacing/spacing";
+
+
+// See https://gist.github.com/jaicab/8799764
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /*16:9*/
+  padding-top: 30px; 
+  height: 0; 
+  overflow: hidden;
+}
+ 
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.has-background-image-harvesting {
+   // background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,0.5) 0%, rgba(0,0,0,0.5) 31%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 100%),
+
+  url('/images/harvesting.jpg') center center;
+  background-size:cover;
+}
