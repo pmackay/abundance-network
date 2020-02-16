@@ -29,16 +29,6 @@ $family-primary: "Literata", serif;
   height: 100%;
 }
 
-.has-background-image-harvesting {
-   // background: rgb(2,0,36);
-  background: url('/images/harvesting.jpg') center center;
-  background-size: cover;
-
-  .column {
-    background: rgba(0, 0, 0, 0.4);
-  }
-}
-
 .grid-item { width: 95%; }
 
 @media (min-width: $tablet) {
