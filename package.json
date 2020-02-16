@@ -16,6 +16,8 @@
     "node-sass": "^4.13.1"
   },
   "dependencies": {
-    "bulma-helper-spacing": "0.0.2"
+    "airtable": "^0.8.1",
+    "bulma-helper-spacing": "0.0.2",
+    "dotenv": "^8.2.0"
   }
 }

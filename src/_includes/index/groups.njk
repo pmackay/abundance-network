@@ -24,6 +24,7 @@
         <h2 class="title is-3">Groups</h2>
 
         <div id='map' style='width: 100%; height: 500px;'></div>
+        <a href="/groups" class="is-size-5">View all groups</a>
       </div>
     </div>
   </div>
@@ -36,5 +37,21 @@ var map = new mapboxgl.Map({
   style: 'mapbox://styles/pmackay/ck6npyhyo0syu1inq6tn8lpft',
   center: [-2.18, 53.34], // starting position [lng, lat]
   zoom: 5 // starting zoom
+});
+
+map.on('load', function() {
+  map.addSource('groups', {
+    type: 'geojson',
+    data: '/files/groups.geojson'
+  });
+  map.addLayer({
+    'id': 'groups',
+    'type': 'symbol',
+    'source': 'groups',
+    'layout': {
+      'text-field': ['get', 'name'],
+
+    }
+  });
 });
 </script>
