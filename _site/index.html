@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Abundance Network</title>
+    <link rel="shortcut icon" href="/images/favicon_2_0.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Literata:400,700&display=swap" rel="stylesheet">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css' rel='stylesheet' />
+
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body class="">
+    
+
+    <main>
+      
+
+      
+<section class="section hero is-medium has-background-image-harvesting">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-one-third has-text-white">
+          
+          <h1 class="title is-1 has-text-white">
+            Abundance Network
+          </h1>
+          <h2 class="subtitle is-5 has-margin-top-5 has-text-white">
+            <p>All over the UK, people have started harvesting gluts of unwanted fruit in their area. We've shared some information, but each group is individual. </p>
+            <strong class="subtitle is-4 has-text-white">Welcome to Abundance.</strong>
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-half content">
+        <h2 class="title is-3">Starting a group</h2>
+        <p>
+        Starting a group can be very satisfying. It’s quite easy to bring a few people together to do an occasional pick, more work to create a larger group that endures.  There are a few key things that you need to do. Here are our ten key things you need to do to get started:
+        </p>
+
+        <ul>
+          <li>Find 3 or 4 people</li>
+          <li>Discuss what you want to do and how you’ll work together</li>
+          <li>Tools (You can use a telescopic pole with a basket but we recommend a pole with a hook so you can shake the tree!)</li>
+          <li>Sheet or tarpaulin</li>
+          <li>Find a fruit bearing tree!</li>
+          <li>Have a think about what to do with the harvested fruit</li>
+          <li>Transport of fruit – pedal power, bike baskets, walking</li>
+          <li>Strong boxes – Ask for them or borrow them from your local supermarket or shop</li>
+          <li>Leaflet to recruit volunteers – have a look at our resources to see if there’s any useful content</li>
+          <li>Get picking!</li>
+        </ul>
+      </div>
+      <div class="column is-half">
+        <h2 class="title is-3">Groups</h2>
+
+        <div id='map' style='width: 100%; height: 500px;'></div>
+        <a href="/groups" class="is-size-5">View all groups</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoicG1hY2theSIsImEiOiI4ODM1MjhkNTFjNmM1NzdlY2MwNTcwM2FmZmQ3ODQ2YSJ9.1aIURJi_s5z6pHsQV6iAGg';
+var map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/pmackay/ck6npyhyo0syu1inq6tn8lpft',
+  center: [-2.18, 53.34], // starting position [lng, lat]
+  zoom: 5 // starting zoom
+});
+
+map.on('load', function() {
+  map.addSource('groups', {
+    type: 'geojson',
+    data: '/files/groups.geojson'
+  });
+  map.addLayer({
+    'id': 'groups',
+    'type': 'symbol',
+    'source': 'groups',
+    'layout': {
+      'text-field': ['get', 'name'],
+
+    }
+  });
+});
+</script>
+
+<section class="section has-background-white-ter">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-half is-offset-one-quarter content has-text-centered">
+        <h2 class="title is-3">The Abundance Handbook</h2>
+        <div class="columns has-margin-top-5">
+          <div class="column is-one-third">
+            <a href="/files/abundbkview_0.pdf">
+              <div class="box"><img src="/images/handbook_cover_0.png" alt="The Abundance Handbook"/></div>
+            </a>
+          </div>
+          <div class="column is-two-thirds content has-text-left">
+            <p class="is-size-4">Created by Sheffield Abundance, the Abundance Handbook is a beautiful and informative guide to fruit harvesting.</p>
+            <a href="/files/abundbkview_0.pdf" class="is-size-4">Download the Handbook</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    
+    <div class="has-text-centered">
+      <img src="/images/apple-logo_1_0.jpg" alt="apple">
+      <h2 class="title is-3">Useful things</h2>
+    </div>
+
+    <div class="columns content has-margin-top-5">
+      
+      <div class="column is-one-third">
+        <h3 class="title is-5">Others creating Abundance</h3>
+        <ul>
+          <li><a href="http://thelondonorchardproject.org/">The London Orchard Project</a></li>
+          <li><a href="http://www.commonground.org.uk">Common Ground</a></li>
+          <li><a href="http://www.fruitfulschools.com" target="_blank">www.fruitfulschools.com</a></li>
+          <li><a href="http://www.scottishfruittrees.com" target="_blank">www.scottishfruittrees.com</a></li>
+        </ul>
+      </div>
+
+      <div class="column is-one-third">
+        <h3 class="title is-5">Abundance in the press</h3>
+        <ul>
+          <li><a href="https://www.theguardian.com/observer-ethical-awards/observer-ethical-awards-shortlist">Winner of <strong>Observer Ethical Award for Best Grassroots Project, 2010</strong></a> (Observer)</li>
+          <li><a href="http://news.bbc.co.uk/local/sheffield/hi/people_and_places/nature/newsid_8176000/8176412.stm">Free fruit in abundance</a> (BBC)</li>
+          <li><a href="http://www.bbc.co.uk/news/magazine-24446261">Fruit-picking charity Abundance is ripe for success</a> (BBC News magazine)</li>
+          <li><a href="http://www.guardian.co.uk/uk/scotland-blog/2012/oct/10/scotland-apples-orchards">Cheap, good to eat and home-grown: apples can help beat the recession</a> (Guardian)</li>
+        </ul>
+      </div>
+
+      <div class="column is-one-third">
+        <h3 class="title is-5">Fruity Resources</h3>
+        <ul>
+          <li><a href="http://www.orangepippin.com/">Orange Pippin</a></li>
+          <li><a href="http://www.organiclea.org.uk/">Organic Lea</a></li>
+          <li><a href="https://iansturrockandsons.co.uk/videoguides/">Ian Sturrock cultivation video guides</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section has-background-white-ter">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-two-thirds is-offset-2">
+        <h2 class="title is-3">Shaking the tree</h2>
+        <div class="video-container">
+          <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/0d3NHFZ5ovM?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    </main>
+
+    <footer class="footer">
+  <p class="is-size-7">Built with <a href="https://bulma.io/">Bulma</a> and <a href="https://www.11ty.dev/">Eleventy</a>.</p>
+  <p class="is-size-7">
+    <span class="icon is-small"><img src="/images/github.svg" alt=""></span>
+    <a href="https://github.com/pmackay/abundance-network">GitHub</a>
+  </p>
+</footer>
+
+  </body>
+</html>
+
+
