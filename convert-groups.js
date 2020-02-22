@@ -3,6 +3,7 @@
 // import * as Papa from 'papaparse';
 // var Papa = require('papaparse');
 
+var slugify = require('slugify')
 require('dotenv').config();
 const fs = require('fs');
 
@@ -46,15 +47,18 @@ base('Groups').select({
       },
       "properties": {
         "name": record.fields.name,
-        'icon-image': 'poi-label'
+        'slug': slugify(record.fields.name, { lower: true })
       }
     };
     geojson.features.push(feature);
   });
+
+  // Output data file for 11ty
   let output = JSON.stringify(data);
   console.log(output);
   fs.writeFileSync('./src/_data/groups.json', output, 'utf-8'); 
 
+  // Output GeoJSON file for the map
   let geojsonOutput = JSON.stringify(geojson);
   console.log(geojsonOutput);
   fs.writeFileSync('./src/files/groups.geojson', geojsonOutput, 'utf-8'); 

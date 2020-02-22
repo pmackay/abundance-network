@@ -1,18 +1,9 @@
 ---
 layout: layout
 ---
-<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-<script>
-var elem = document.querySelector('.grid');
-var msnry = new Masonry( elem, {
-  // options
-  itemSelector: '.grid-item',
-  percentPosition: true
-});
-</script>
 
 <section class="section">
-  <div class="container">
+  <div class="container content">
     <h1 class="title is-1">Abundance Groups</h1>
 
     <nav class="breadcrumb" aria-label="breadcrumbs">
@@ -20,27 +11,15 @@ var msnry = new Masonry( elem, {
         <li><a href="{{ site.host }}/">Home</a></li>
       </ul>
     </nav>
-    
-    <div class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 300 }'>
-      {% for group in groups %}
-      <div class="grid-item has-margin-top-6">
-        <div class="box content">
-          <h2 class="title is-4">{{ group.name }}</h2>
-          <p>{{ group.description }}</p>
-          
-          <footer class="card-footer">
-            {% if group.website %}
-            <a class="card-footer-item" href="{{ group.website }}" target="_blank">Website</a>
-            {% endif %}
 
-            {% if group.twitter %}
-            <a class="card-footer-item" href="https://www.twitter.com/{{ group.twitter }}" target="_blank">Twitter</a>
-            {% endif %}
-          </footer>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-  
+    <table class="">
+    {% for group in groups | sort(false, false, 'name') %}
+      <tr>
+      <td><a href="{{ site.host }}/groups/{{ group.name | slug }}" class="is-size-4">{{ group.name }}</a></td>
+      <td><span>{{ group.address }}</span></td>
+      </tr>
+    {% endfor %}
+    </table>
+
   </div>
 </section>

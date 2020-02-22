@@ -8,3 +8,8 @@ yarn start
 ./serve.sh
 ```
 
+
+Run this to create the groups GeoJSON file:
+```
+node convert-groups.js
+```

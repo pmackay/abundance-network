@@ -1,0 +1,39 @@
+---
+layout: layout
+pagination:
+    data: groups
+    size: 1
+    alias: group
+permalink: "groups/{{ group.name | slug }}/"
+---
+
+<article class"">
+  <div class="section">
+    <div class="container content">
+
+      <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+          <li><a href="{{ site.host }}/">Home</a></li>
+          <li><a href="{{ site.host }}/groups">Groups</a></li>
+        </ul>
+      </nav>
+      
+      <h1 class="title is-1">{{ group.name }}</h1>
+      <div class="columns">
+      <div class="column is-two-thirds">
+      <img src="{{ group.image[0].thumbnails.large.url }}"/>
+      <p class="is-size-5 has-margin-top-4">{{ group.description }}</p>
+
+      {% if group.website %}
+      <p><strong>Website:</strong> <a class="" href="{{ group.website }}" target="_blank">{{ group.website }}</a></p>
+      {% endif %}
+
+      {% if group.twitter %}
+      <p><strong>Twitter:</strong> <a class="" href="https://www.twitter.com/{{ group.twitter }}" target="_blank">{{ group.twitter }}</a></p>
+      {% endif %}
+      </div>
+      </div>
+
+    </div>
+  </div>
+</article>

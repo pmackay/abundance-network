@@ -1,6 +1,7 @@
 <section class="section">
   <div class="container">
     <div class="columns">
+      
       <div class="column is-half content">
         <h2 class="title is-3">Starting a group</h2>
         <p>
@@ -19,13 +20,17 @@
           <li>Leaflet to recruit volunteers – have a look at our resources to see if there’s any useful content</li>
           <li>Get picking!</li>
         </ul>
+        <a href="{{ site.host }}/groups" class="is-size-5">View a list of the groups</a>
+        <br/>
+        <a href="{{ site.host }}/equipment" class="is-size-5">More details on equipment and insurance</a>
       </div>
+
       <div class="column is-half">
         <h2 class="title is-3">Groups</h2>
 
         <div id='map' style='width: 100%; height: 500px;'></div>
-        <a href="{{ site.host }}/groups" class="is-size-5">View all groups</a>
       </div>
+
     </div>
   </div>
 </section>
@@ -40,18 +45,28 @@ var map = new mapboxgl.Map({
 });
 
 map.on('load', function() {
-  map.addSource('groups', {
-    type: 'geojson',
-    data: '{{ site.host }}/files/groups.geojson'
-  });
-  map.addLayer({
-    'id': 'groups',
-    'type': 'symbol',
-    'source': 'groups',
-    'layout': {
-      'text-field': ['get', 'name'],
-
-    }
-  });
+  fetch('{{ site.host }}/files/groups.geojson')
+  .then(response => {
+     if (!response.ok) {
+       throw new Error("HTTP error " + response.status);
+     }
+     return response.json();
+  })
+  .then(geojson => {
+    geojson.features.forEach(function(marker) {
+      // create a DOM element for the marker
+      var el = document.createElement('div');
+      el.className = 'marker';
+       
+      new mapboxgl.Marker(el)
+        .setLngLat(marker.geometry.coordinates)
+        .setPopup(new mapboxgl.Popup({ offset: 25 })
+          .setHTML(`<h3>${marker.properties.name}</h3><a href="/groups/${marker.properties.slug}" target="_blank">Read more</a>`))
+        .addTo(map);
+    });
+  })
+  .catch(function () {
+    this.dataError = true;
+  })
 });
 </script>

@@ -8403,3 +8403,18 @@ label.panel-block {
 @media (min-width: 769px) {
   .grid-item {
     width: 42%; } }
+
+.marker {
+  background-image: url("/images/map-icon-apple.jpg");
+  background-size: cover;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  cursor: pointer; }
+
+.mapboxgl-popup {
+  max-width: 200px; }
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif; }
