@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Abundance Network</title>
-    <link rel="shortcut icon" href="http://localhost:8080/images/favicon_2_0.ico" type="image/vnd.microsoft.icon" />
+    <link rel="shortcut icon" href="http://www.paulmackay.me/abundance-network/images/favicon_2_0.ico" type="image/vnd.microsoft.icon" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <link href="https://fonts.googleapis.com/css?family=Literata:400,700&display=swap" rel="stylesheet">
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css' rel='stylesheet' />
 
-    <link rel="stylesheet" href="http://localhost:8080/css/main.css">
+    <link rel="stylesheet" href="http://www.paulmackay.me/abundance-network/css/main.css">
   </head>
   <body class="">
     
@@ -21,7 +21,7 @@
       
 <style type="text/css">
 .has-background-image-harvesting {
-  background: url('http://localhost:8080/images/harvesting.jpg') center center;
+  background: url('http://www.paulmackay.me/abundance-network/images/harvesting.jpg') center center;
   background-size: cover;
 }
 
@@ -72,9 +72,9 @@
           <li>Leaflet to recruit volunteers – have a look at our resources to see if there’s any useful content</li>
           <li>Get picking!</li>
         </ul>
-        <a href="http://localhost:8080/groups" class="is-size-5">View a list of the groups</a>
+        <a href="http://www.paulmackay.me/abundance-network/groups" class="is-size-5">View a list of the groups</a>
         <br/>
-        <a href="http://localhost:8080/equipment" class="is-size-5">More details on equipment and insurance</a>
+        <a href="http://www.paulmackay.me/abundance-network/equipment" class="is-size-5">More details on equipment and insurance</a>
       </div>
 
       <div class="column is-half">
@@ -97,7 +97,7 @@ var map = new mapboxgl.Map({
 });
 
 map.on('load', function() {
-  fetch('http://localhost:8080/files/groups.geojson')
+  fetch('http://www.paulmackay.me/abundance-network/files/groups.geojson')
   .then(response => {
      if (!response.ok) {
        throw new Error("HTTP error " + response.status);
@@ -130,13 +130,13 @@ map.on('load', function() {
         <h2 class="title is-3">The Abundance Handbook</h2>
         <div class="columns has-margin-top-5">
           <div class="column is-one-third">
-            <a href="http://localhost:8080/files/abundbkview_0.pdf">
-              <div class="box"><img src="http://localhost:8080/images/handbook_cover_0.png" alt="The Abundance Handbook"/></div>
+            <a href="http://www.paulmackay.me/abundance-network/files/abundbkview_0.pdf">
+              <div class="box"><img src="http://www.paulmackay.me/abundance-network/images/handbook_cover_0.png" alt="The Abundance Handbook"/></div>
             </a>
           </div>
           <div class="column is-two-thirds content has-text-left">
             <p class="is-size-4">Created by Sheffield Abundance, the Abundance Handbook is a beautiful and informative guide to fruit harvesting.</p>
-            <a href="http://localhost:8080/files/abundbkview_0.pdf" class="is-size-4">Download the Handbook</a>
+            <a href="http://www.paulmackay.me/abundance-network/files/abundbkview_0.pdf" class="is-size-4">Download the Handbook</a>
           </div>
         </div>
       </div>
@@ -148,7 +148,7 @@ map.on('load', function() {
   <div class="container">
     
     <div class="has-text-centered has-margin-top-5">
-      <img src="http://localhost:8080/images/minok2_0.jpg" alt="apple">
+      <img src="http://www.paulmackay.me/abundance-network/images/minok2_0.jpg" alt="apple">
       <h2 class="title is-3 has-margin-top-3">Hints and Tips</h2>
     </div>
     <div class="columns content has-margin-top-4">
@@ -170,7 +170,7 @@ map.on('load', function() {
     <hr/>
 
     <div class="has-text-centered has-margin-top-6">
-      <img src="http://localhost:8080/images/apple-logo_1_0.jpg" alt="apple">
+      <img src="http://www.paulmackay.me/abundance-network/images/apple-logo_1_0.jpg" alt="apple">
       <h2 class="title is-3">Useful things</h2>
     </div>
 
@@ -229,7 +229,7 @@ map.on('load', function() {
     <footer class="footer">
   <p class="is-size-7">Built with <a href="https://bulma.io/">Bulma</a> and <a href="https://www.11ty.dev/">Eleventy</a>.</p>
   <p class="is-size-7">
-    <span class="icon is-small"><img src="http://localhost:8080/images/github.svg" alt=""></span>
+    <span class="icon is-small"><img src="http://www.paulmackay.me/abundance-network/images/github.svg" alt=""></span>
     <a href="https://github.com/pmackay/abundance-network">GitHub</a>
   </p>
 </footer>
