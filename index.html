@@ -124,7 +124,7 @@ map.on('load', function() {
       new mapboxgl.Marker(el)
         .setLngLat(marker.geometry.coordinates)
         .setPopup(new mapboxgl.Popup({ offset: 25 })
-          .setHTML(`<h3>${marker.properties.name}</h3><a href="/groups/${marker.properties.slug}" target="_blank">Read more</a>`))
+          .setHTML(`<h3>${marker.properties.name}</h3><a href="http://www.paulmackay.me/abundance-network/groups/${marker.properties.slug}" target="_blank">Read more</a>`))
         .addTo(map);
     });
   })
