@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Abundance Network</title>
-    <link rel="shortcut icon" href="http://www.paulmackay.me/abundance-network/images/favicon_2_0.ico" type="image/vnd.microsoft.icon" />
+    <link rel="shortcut icon" href="http://localhost:8080/images/favicon_2_0.ico" type="image/vnd.microsoft.icon" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <link href="https://fonts.googleapis.com/css?family=Literata:400,700&display=swap" rel="stylesheet">
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css' rel='stylesheet' />
 
-    <link rel="stylesheet" href="http://www.paulmackay.me/abundance-network/css/main.css">
+    <link rel="stylesheet" href="http://localhost:8080/css/main.css">
   </head>
   <body class="">
     
@@ -21,7 +21,7 @@
       
 <style type="text/css">
 .has-background-image-harvesting {
-  background: url('http://www.paulmackay.me/abundance-network/images/harvesting.jpg') center center;
+  background: url('http://localhost:8080/images/harvesting.jpg') center center;
   background-size: cover;
 }
 
@@ -31,7 +31,7 @@
 </style>
 
 
-<section class="section hero is-medium has-background-image-harvesting">
+<section class="section hero has-background-image-harvesting">
   <div class="hero-body">
     <div class="container">
       <div class="columns">
@@ -53,6 +53,7 @@
 <section class="section">
   <div class="container">
     <div class="columns">
+      
       <div class="column is-half content">
         <h2 class="title is-3">Starting a group</h2>
         <p>
@@ -71,13 +72,17 @@
           <li>Leaflet to recruit volunteers – have a look at our resources to see if there’s any useful content</li>
           <li>Get picking!</li>
         </ul>
+        <a href="http://localhost:8080/groups" class="is-size-5">View a list of the groups</a>
+        <br/>
+        <a href="http://localhost:8080/equipment" class="is-size-5">More details on equipment and insurance</a>
       </div>
+
       <div class="column is-half">
         <h2 class="title is-3">Groups</h2>
 
         <div id='map' style='width: 100%; height: 500px;'></div>
-        <a href="http://www.paulmackay.me/abundance-network/groups" class="is-size-5">View all groups</a>
       </div>
+
     </div>
   </div>
 </section>
@@ -92,19 +97,29 @@ var map = new mapboxgl.Map({
 });
 
 map.on('load', function() {
-  map.addSource('groups', {
-    type: 'geojson',
-    data: 'http://www.paulmackay.me/abundance-network/files/groups.geojson'
-  });
-  map.addLayer({
-    'id': 'groups',
-    'type': 'symbol',
-    'source': 'groups',
-    'layout': {
-      'text-field': ['get', 'name'],
-
-    }
-  });
+  fetch('http://localhost:8080/files/groups.geojson')
+  .then(response => {
+     if (!response.ok) {
+       throw new Error("HTTP error " + response.status);
+     }
+     return response.json();
+  })
+  .then(geojson => {
+    geojson.features.forEach(function(marker) {
+      // create a DOM element for the marker
+      var el = document.createElement('div');
+      el.className = 'marker';
+       
+      new mapboxgl.Marker(el)
+        .setLngLat(marker.geometry.coordinates)
+        .setPopup(new mapboxgl.Popup({ offset: 25 })
+          .setHTML(`<h3>${marker.properties.name}</h3><a href="/groups/${marker.properties.slug}" target="_blank">Read more</a>`))
+        .addTo(map);
+    });
+  })
+  .catch(function () {
+    this.dataError = true;
+  })
 });
 </script>
 
@@ -115,13 +130,13 @@ map.on('load', function() {
         <h2 class="title is-3">The Abundance Handbook</h2>
         <div class="columns has-margin-top-5">
           <div class="column is-one-third">
-            <a href="http://www.paulmackay.me/abundance-network/files/abundbkview_0.pdf">
-              <div class="box"><img src="http://www.paulmackay.me/abundance-network/images/handbook_cover_0.png" alt="The Abundance Handbook"/></div>
+            <a href="http://localhost:8080/files/abundbkview_0.pdf">
+              <div class="box"><img src="http://localhost:8080/images/handbook_cover_0.png" alt="The Abundance Handbook"/></div>
             </a>
           </div>
           <div class="column is-two-thirds content has-text-left">
             <p class="is-size-4">Created by Sheffield Abundance, the Abundance Handbook is a beautiful and informative guide to fruit harvesting.</p>
-            <a href="http://www.paulmackay.me/abundance-network/files/abundbkview_0.pdf" class="is-size-4">Download the Handbook</a>
+            <a href="http://localhost:8080/files/abundbkview_0.pdf" class="is-size-4">Download the Handbook</a>
           </div>
         </div>
       </div>
@@ -132,8 +147,30 @@ map.on('load', function() {
 <section class="section">
   <div class="container">
     
-    <div class="has-text-centered">
-      <img src="http://www.paulmackay.me/abundance-network/images/apple-logo_1_0.jpg" alt="apple">
+    <div class="has-text-centered has-margin-top-5">
+      <img src="http://localhost:8080/images/minok2_0.jpg" alt="apple">
+      <h2 class="title is-3 has-margin-top-3">Hints and Tips</h2>
+    </div>
+    <div class="columns content has-margin-top-4">
+      <div class="column is-one-third">
+        <h3 class="title is-4">Mapping</h3>
+        <p>The aim of Abundance is to look at surpluses, so it may not be worth mapping any fruit tree you see. Just focus on the ones that are productive and have a surplus that is not used.</p>
+      </div>
+      <div class="column is-one-third">
+        <h3 class="title is-4">Private gardens</h3>
+        <p>Its much easier to choose gardens that have a side gate or other access from the street, rather than having to walk a group of potential strangers through someone's house.</p>
+      </div>
+      <div class="column is-one-third">
+        <h3 class="title is-4">Distribution</h3>
+        <p>Think about where the fruit is going after picking, so it doesn't spoil.</p>
+        <p>The best time to pick for an event is a few days beforehand, so fruit that might be bruised is not being stored for days in boxes, increasing its chance of going rotten.</p>
+      </div>
+    </div>
+    
+    <hr/>
+
+    <div class="has-text-centered has-margin-top-6">
+      <img src="http://localhost:8080/images/apple-logo_1_0.jpg" alt="apple">
       <h2 class="title is-3">Useful things</h2>
     </div>
 
@@ -177,8 +214,9 @@ map.on('load', function() {
     <div class="columns">
       <div class="column is-two-thirds is-offset-2">
         <h2 class="title is-3">Shaking the tree</h2>
-        <div class="video-container">
-          <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/0d3NHFZ5ovM?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p class="has-margin-top-3">A video about the Kensal to Kilburn Fruit Harvesters group (4 mins).</p>
+        <div class="video-container has-margin-top-5">
+          <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/0d3NHFZ5ovM?controls=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
     </div>
@@ -191,7 +229,7 @@ map.on('load', function() {
     <footer class="footer">
   <p class="is-size-7">Built with <a href="https://bulma.io/">Bulma</a> and <a href="https://www.11ty.dev/">Eleventy</a>.</p>
   <p class="is-size-7">
-    <span class="icon is-small"><img src="http://www.paulmackay.me/abundance-network/images/github.svg" alt=""></span>
+    <span class="icon is-small"><img src="http://localhost:8080/images/github.svg" alt=""></span>
     <a href="https://github.com/pmackay/abundance-network">GitHub</a>
   </p>
 </footer>
