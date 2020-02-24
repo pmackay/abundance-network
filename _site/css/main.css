@@ -8404,14 +8404,6 @@ label.panel-block {
   .grid-item {
     width: 42%; } }
 
-.marker {
-  background-image: url("/images/map-icon-apple.jpg");
-  background-size: cover;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  cursor: pointer; }
-
 .mapboxgl-popup {
   max-width: 200px; }
 

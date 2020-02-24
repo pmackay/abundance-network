@@ -6,20 +6,20 @@ layout: layout
   <div class="container content">
     <h1 class="title is-1">Abundance Groups</h1>
 
-    <nav class="breadcrumb" aria-label="breadcrumbs">
-      <ul>
-        <li><a href="{{ site.host }}/">Home</a></li>
-      </ul>
-    </nav>
-
     <table class="">
-    {% for group in groups | sort(false, false, 'name') %}
+    {% for group in groups | rejectattr('inactive') | sort(false, false, 'name') %}
       <tr>
       <td><a href="{{ site.host }}/groups/{{ group.name | slug }}" class="is-size-4">{{ group.name }}</a></td>
       <td><span>{{ group.address }}</span></td>
       </tr>
     {% endfor %}
     </table>
+
+    <h4 class="title is-4 has-margin-top-6">Inactive groups</h4>
+    {% for group in groups | selectattr('inactive') | sort(false, false, 'name') %}
+      <a href="{{ site.host }}/groups/{{ group.name | slug }}" class="is-size-6">{{ group.name }}</a>
+      <br/>
+    {% endfor %}
 
   </div>
 </section>

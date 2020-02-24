@@ -1,5 +1,5 @@
 {
   "name": "Abundance Network",
-  "host": "http://www.paulmackay.me/abundance-network"
+  "host": "http://localhost:8080"
 
 }

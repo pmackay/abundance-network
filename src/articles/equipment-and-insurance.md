@@ -3,6 +3,8 @@ layout: page
 title: Equipment and Insurance
 ---
 
+_August 2012_
+
 # Equipment and Insurance
 
 Telescopic poles, hooks, insurance, weighing scales, fruit presses - suggestions from various Abundance groups.
@@ -19,13 +21,11 @@ These are only suggestions and better products or sellers may be available!
 
 There’s also a hook attachment for shaking branches – extremely useful for quick harvesting into a tarpaulin held off the ground by 4 people.
 
-http://www.garden-goodies.co.uk/acatalog
+[http://www.garden-goodies.co.uk/acatalog](http://www.garden-goodies.co.uk/acatalog)
 
-4 metre pole (code ZMV4)             £26.98 + VAT
-
-Basket (RGM)                                   £10.82 + VAT
-
-Hook   (code RTM)                           £9.14 + VAT
+- 4 metre pole (code ZMV4)             £26.98 + VAT
+- Basket (RGM)                                   £10.82 + VAT
+- Hook   (code RTM)                           £9.14 + VAT
 
 Discounts possible for bulk purchases. Free delivery for orders over £35.
 
@@ -33,8 +33,7 @@ Neil 01274 563639  sales@garden-goodies.co.uk;
 
  
 
-Also sold at World of Wolf (and other places)
-http://www.worldofwolf.co.uk/menu/103/Wolf%20Multi-Change.html
+Also sold at [World of Wolf](http://www.worldofwolf.co.uk/menu/103/Wolf%20Multi-Change.html) (and other places)
 
 The 4 metre poles are too heavy for some people but 2 metre poles probably too short to be worth getting.
 
@@ -51,8 +50,9 @@ You can buy just the basket or hook and attach them securely to a wooden pole or
 
 ### Harvesting bags
 
-“We ordered some really good quality harvesting bags from Vigo [£13.25 each] this year that have been really useful. We found that having the bags round your shoulder you could place fruit in the bag rather than bend down continually to place in a box and much easier to carry to picks than boxes. Also they were good for short term storage if we didn't have enough boxes.” http://www.vigopresses.co.uk/store/product_info.php?products_id=380
+“We ordered some really good quality harvesting bags from Vigo [£13.25 each] this year that have been really useful. We found that having the bags round your shoulder you could place fruit in the bag rather than bend down continually to place in a box and much easier to carry to picks than boxes. Also they were good for short term storage if we didn't have enough boxes.” 
 
+Find at [Vigo Presses](http://www.vigopresses.co.uk/store/product_info.php?products_id=380).
  
 
 ### Pruning saw
@@ -75,21 +75,21 @@ At least 5m x 5m, with eyelets so you can tie up with rope if short of people to
 
 The Consvervation Volunteers offer group insurance with Zurich costs about £230 a year. They will extend the height you can work from the ground to 7.5 metres at no extra charge.
 
-http://www.tcv.org.uk/community/join-community-network/community-group-insurance
+[TCV insurance](http://www.tcv.org.uk/community/join-community-network/community-group-insurance)
 
  
 
 ### Fruit press
 Kensal to Kilburn borrowed a 12 litre press and made 400 cups of juice in one day but decided to buy the 20 litre cross beam press from Vigo together with their scratter. Combined cost £580.  We made 500 glasses the following year in one day but it was still a lot of work.
 
-http://www.vigopresses.co.uk/store/pages.php?page=home
+[Vigo Presses](http://www.vigopresses.co.uk/store/pages.php?page=home)
 
  
 
 West Ealing started with two 12 litre presses but couldn’t keep up with demand so will hire a much bigger one to juice and bottle in advance. They will still use the smaller presses for demonstrations at events.
 
-Another Abundance project: “We bought a 20l press, and this year are looking to buy a larger one. It's quite slow pressing with a 20l press and hand crusher, we also found that the pulp was still quite wet when we had finished, unlike with the bigger crushers and presses where it's almost dry when it comes out. We bought ours from Art of Brewing, which was cheaper than Vigo, the quality
-seemed ok. http://www.art-of-brewing.co.uk/”
+Another Abundance project: “We bought a 20l press, and this year are looking to buy a larger one. It's quite slow pressing with a 20l press and hand crusher, we also found that the pulp was still quite wet when we had finished, unlike with the bigger crushers and presses where it's almost dry when it comes out. We bought ours from [Art of Brewing](http://www.art-of-brewing.co.uk/), which was cheaper than Vigo, the quality
+seemed ok."
 
  
 

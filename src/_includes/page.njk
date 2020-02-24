@@ -4,18 +4,12 @@ layout: layout.njk
 
 
 <article class="container content">
+  
   <div class="section">
-  
-  <nav class="breadcrumb" aria-label="breadcrumbs">
-    <ul>
-      <li><a href="{{ site.host }}/">Home</a></li>
-    </ul>
-  </nav>
-  
-  <div class="columns">
-    <div class="column is-two-thirds">
-      {{ content | safe }}
+    <div class="columns">
+      <div class="column is-half is-offset-one-quarter">
+        {{ content | safe }}
+      </div>
     </div>
-  </div>
   </div>
 </article>
