@@ -1,0 +1,23 @@
+---
+layout: page
+title: Recipes
+---
+
+<h1 class="title is-1">Recipes</h1>
+
+<div class="has-margin-top-6">
+{%- for recipe in collections.recipe -%}
+  <article class="media">
+    <div class="media-left" style="width: 100px">
+      <a href="{{ site.host }}{{ recipe.url }}">
+        <img src="{{ site.host }}/images/recipes/{{ recipe.data.image }}" alt="">
+      </a>
+    </div>
+    <div class="media-content">
+      <a href="{{ site.host }}{{ recipe.url }}">
+        <h2>{{ recipe.data.title }}</h2>
+      </a>
+    </div>
+  </article>
+{%- endfor -%}
+</div>

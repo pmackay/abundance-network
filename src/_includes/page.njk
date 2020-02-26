@@ -8,8 +8,10 @@ layout: layout.njk
   <div class="section">
     <div class="columns">
       <div class="column is-half is-offset-one-quarter">
+        <img src="{{ site.host }}/images/{{ image }}" alt="" class="is-pulled-right">
         {{ content | safe }}
       </div>
     </div>
   </div>
+
 </article>
